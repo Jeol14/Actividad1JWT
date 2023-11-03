@@ -10,6 +10,12 @@ const port = 5000;
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/api', (req, res) =>{
+    res.json({
+        message:'express y jwt'
+    })
+})
+
 app.post('/api/register', async (req, res) => {
     const { name, email, password } = req.body;
 
